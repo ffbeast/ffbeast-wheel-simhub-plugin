@@ -13,19 +13,19 @@
 - if installed as `SimHub\PluginSdk\SimHubPluginSdk\`, then Visual Studio `Build` and `Debug` *may just work*...  
   ... but **do NOT**;&nbsp; instead, change `namespace`:  
 	- avoid collisions with other plugins that did not change namespace  
-	- lines in files to change `Sdk.Plugin`:  
+	- lines in files to change `FFBeast`:  
 	```
-	Control.xaml:﻿<UserControl x:Class="Sdk.Plugin.Control"
-	Control.xaml:             xmlns:local="clr-namespace:Sdk.Plugin"
-	Control.xaml.cs:namespace Sdk.Plugin
-	Plugin.cs:namespace Sdk.Plugin
-	Settings.cs:namespace Sdk.Plugin
-	SimHubPluginSdk.csproj:    <RootNamespace>Sdk.Plugin</RootNamespace>
-	SimHubPluginSdk.csproj:    <AssemblyName>Sdk.Plugin</AssemblyName>
-	Properties/AssemblyInfo.cs:[assembly: AssemblyTitle("Sdk.Plugin")]
-	Properties/AssemblyInfo.cs:[assembly: AssemblyProduct("Sdk.Plugin")]
-	Properties/Resources.Designer.cs:namespace Sdk.Plugin.Properties {
-	Properties/Resources.Designer.cs:                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Sdk.Plugin.Properties.Resources", typeof(Resources).Assembly);
+	Control.xaml:﻿<UserControl x:Class="FFBeast.Control"
+	Control.xaml:             xmlns:local="clr-namespace:FFBeast"
+	Control.xaml.cs:namespace FFBeast
+	Plugin.cs:namespace FFBeast
+	Settings.cs:namespace FFBeast
+	SimHubPluginSdk.csproj:    <RootNamespace>FFBeast</RootNamespace>
+	SimHubPluginSdk.csproj:    <AssemblyName>FFBeast</AssemblyName>
+	Properties/AssemblyInfo.cs:[assembly: AssemblyTitle("FFBeast")]
+	Properties/AssemblyInfo.cs:[assembly: AssemblyProduct("FFBeast")]
+	Properties/Resources.Designer.cs:namespace FFBeast.Properties {
+	Properties/Resources.Designer.cs:                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FFBeast.Properties.Resources", typeof(Resources).Assembly);
 	```
 	- delete `obj` folder, to force icon rebuild with correct namespace from `sdkmenuicon.png`
 ## XAML user interface:&nbsp; [Create a UI by using XAML Designer](https://learn.microsoft.com/en-us/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio?view=vs-2022)  

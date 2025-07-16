@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FFBeast.Views.MainPluginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FFBeast.Views"
+             xmlns:styles="clr-namespace:SimHub.Plugins.Styles;assembly=SimHub.Plugins"
+             xmlns:viewModels="clr-namespace:FFBeast.ViewModels"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModels:MainPluginViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <styles:SHTabControl Grid.Row="0">
+            <styles:SHTabItem Header="Effects">
+                <local:EffectsView DataContext="{Binding EffectsViewModel}" />
+            </styles:SHTabItem>
+            <styles:SHTabItem Header="Device">
+                <local:DeviceSettingsView />
+            </styles:SHTabItem>
+        </styles:SHTabControl>
+        <Button Grid.Row="1" Content="Save and reboot" Margin="10"></Button>
+    </Grid>
+</UserControl>

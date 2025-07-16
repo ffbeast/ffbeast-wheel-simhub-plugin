@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="FFBeast.Views.ControllerSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FFBeast.Views"
+             xmlns:styles="clr-namespace:SimHub.Plugins.Styles;assembly=SimHub.Plugins"
+             xmlns:ui="clr-namespace:SimHub.Plugins.UI;assembly=SimHub.Plugins"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <styles:SHListBox>
+        <ListBoxItem>
+            <styles:SHToggleCheckbox>Enable force (Require reboot)</styles:SHToggleCheckbox>
+        </ListBoxItem>
+        <ListBoxItem>
+            <styles:SHToggleCheckbox>Invert joystick output</styles:SHToggleCheckbox>
+        </ListBoxItem>
+        <ListBoxItem>
+            <styles:SHToggleCheckbox>Invert force</styles:SHToggleCheckbox>
+        </ListBoxItem>
+        <ListBoxItem>
+            <styles:SHToggleCheckbox>Debug forces</styles:SHToggleCheckbox>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="Encoder CPR" Maximum="65535" Minimum="0" Value="20480"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="Pole pairs" Maximum="100" Minimum="1" Value="15"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="Power limit (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="Calibration magnitude (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem IsEnabled="False">
+            <ui:TitledSlider Title="Calibration speed (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="Braking resistor limit (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem IsEnabled="False">
+            <ui:TitledSlider Title="Speed sample buffer size" Maximum="32" Minimum="2" Value="2"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem IsEnabled="False">
+            <ui:TitledSlider Title="Position smoothing (%)" Maximum="100" Minimum="0" Value="0"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="P gain" Maximum="100" Minimum="0" Value="10"></ui:TitledSlider>
+        </ListBoxItem>
+        <ListBoxItem>
+            <ui:TitledSlider Title="I gain" Maximum="1000" Minimum="0" Value="100"></ui:TitledSlider>
+        </ListBoxItem>
+    </styles:SHListBox>
+</UserControl>

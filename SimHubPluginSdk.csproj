@@ -7,8 +7,8 @@
     <ProjectGuid>{833040C9-FE5E-4CCF-B21D-71979E049B6B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sdk.Plugin</RootNamespace>
-    <AssemblyName>Sdk.Plugin</AssemblyName>
+    <RootNamespace>FFBeast</RootNamespace>
+    <AssemblyName>FFBeast</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -81,10 +81,15 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="Wpf.Ui, Version=4.0.0.0, Culture=neutral, PublicKeyToken=11f9f5cc97b3ffd6, processorArchitecture=MSIL">
+      <HintPath>packages\WPF-UI.4.0.3\lib\net472\Wpf.Ui.dll</HintPath>
+    </Reference>
+    <Reference Include="Wpf.Ui.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=11f9f5cc97b3ffd6, processorArchitecture=MSIL">
+      <HintPath>packages\WPF-UI.Abstractions.4.0.3\lib\net472\Wpf.Ui.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FFBeastPlugin.cs" />
-    <Compile Include="FFBeastViewModel.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -92,10 +97,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="FFBeastView.xaml.cs">
-      <DependentUpon>FFBeastView.xaml</DependentUpon>
+    <Compile Include="ViewModels\EffectsViewModel.cs" />
+    <Compile Include="ViewModels\MainPluginViewModel.cs" />
+    <Compile Include="ViewModels\VieModelBase.cs" />
+    <Compile Include="Views\DeviceSettingsView.xaml.cs">
+      <DependentUpon>DeviceSettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VieModelBase.cs" />
+    <Compile Include="Views\EffectsView.xaml.cs">
+      <DependentUpon>EffectsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LicenseSettingsView.xaml.cs">
+      <DependentUpon>LicenseSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPluginView.xaml.cs">
+      <DependentUpon>MainPluginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeripherySettingsView.xaml.cs">
+      <DependentUpon>PeripherySettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControllerSettingsView.xaml.cs">
+      <DependentUpon>ControllerSettingsView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
@@ -103,7 +125,27 @@
       <Generator>MSBuild:Compile</Generator>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
-    <Page Include="FFBeastView.xaml">
+    <Page Include="Views\DeviceSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EffectsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LicenseSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPluginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PeripherySettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ControllerSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,6 +158,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

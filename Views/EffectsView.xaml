@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="FFBeast.Views.EffectsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FFBeast.Views"
+             xmlns:styles="clr-namespace:SimHub.Plugins.Styles;assembly=SimHub.Plugins"
+             xmlns:ui="clr-namespace:SimHub.Plugins.UI;assembly=SimHub.Plugins"
+             xmlns:viewModels="clr-namespace:FFBeast.ViewModels"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModels:EffectsViewModel}">
+
+    <styles:SHSection Title="{Binding Game}">
+        <styles:SHTabControl>
+            <styles:SHTabItem Grid.Row="0" Header="Common">
+                <ListBox>
+                    <ListBoxItem>
+                        <ui:TitledSlider Title="Motion range (degrees)" Maximum="9999" Minimum="0" Value="540"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <ui:TitledSlider Title="Total effects strength (%)" Maximum="100" Minimum="0" Value="100"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Integrated spring strength (%)" Maximum="100" Minimum="0" Value="10"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Soft stop strength (%)" Maximum="100" Minimum="0" Value="100"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Soft stop range (degrees)" Maximum="100" Minimum="0" Value="10"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Soft stop dampening(%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <ui:TitledSlider Title="Static dampening(%)" Maximum="100" Minimum="0" Value="10"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Dynamic dampening(%)" Maximum="100" Minimum="0" Value="0"></ui:TitledSlider>
+                    </ListBoxItem>
+                </ListBox>
+            </styles:SHTabItem>
+
+            <styles:SHTabItem Grid.Row="1" Header="DirectX">
+                <ListBox>
+                    <ListBoxItem>
+                        <styles:SHToggleCheckbox>
+                            Invert constant force
+                        </styles:SHToggleCheckbox>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Constant force strength (%)" Maximum="100" Minimum="0" Value="100"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Spring force strength (%)" Maximum="100" Minimum="0" Value="100"></ui:TitledSlider>
+                    </ListBoxItem>
+                    <ListBoxItem IsEnabled="{Binding PremiumDeviceConnected}">
+                        <ui:TitledSlider Title="Spring force strength (%)" Maximum="100" Minimum="0" Value="100"></ui:TitledSlider>
+                    </ListBoxItem>
+                </ListBox>
+            </styles:SHTabItem>
+
+            <styles:SHTabItem Grid.Row="3" Header="Custom effects">
+                W.I.P
+            </styles:SHTabItem>
+
+        </styles:SHTabControl>
+    </styles:SHSection>
+
+</UserControl>
