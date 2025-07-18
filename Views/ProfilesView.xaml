@@ -7,15 +7,14 @@
              xmlns:viewModels="clr-namespace:FFBeast.ViewModels"
              xmlns:styles="clr-namespace:SimHub.Plugins.Styles;assembly=SimHub.Plugins"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModels:ProfilesViewModel}">
-    
     <UserControl.Resources>
-        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </UserControl.Resources>
     <styles:SHSection Title="{Binding SectionTitle}">
         <StackPanel>
-            <styles:SHToggleCheckbox Content="Use default effects settings" IsChecked="{Binding UseDefaultSettings}"/>    
-            <StackPanel Visibility="{Binding EnableEffectsView, Converter={StaticResource BoolToVis}}">
-                <local:EffectsView DataContext="{Binding EffectsViewModel}"  />
+            <styles:SHToggleCheckbox Content="Override default effect settings" IsChecked="{Binding OverrideDefaultSettings}" />
+            <StackPanel Visibility="{Binding OverrideDefaultSettings, Converter={StaticResource BoolToVis}}">
+                <local:EffectsView DataContext="{Binding EffectsViewModel}" />
             </StackPanel>
         </StackPanel>
     </styles:SHSection>

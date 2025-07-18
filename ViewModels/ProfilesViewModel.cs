@@ -4,24 +4,14 @@ namespace FFBeast.ViewModels {
     public class ProfilesViewModel : ViewModelBase {
         private readonly IGameManager gameManager;
 
-        private bool useDefaultSettings { get; set; } = true;
-        private bool enableEffectsView { get; set; }
+        private bool overrideDefaultSettings { get; set; }
 
         public string SectionTitle => "Profile for " + gameManager.GameDisplayName;
 
-        public bool UseDefaultSettings {
-            get => useDefaultSettings;
+        public bool OverrideDefaultSettings {
+            get => overrideDefaultSettings;
             set {
-                useDefaultSettings = value;
-                EnableEffectsView = !useDefaultSettings;
-                OnPropertyChanged();
-            }
-        }
-        
-        public bool EnableEffectsView {
-            get => enableEffectsView;
-            set {
-                enableEffectsView = value;
+                overrideDefaultSettings = value;
                 OnPropertyChanged();
             }
         }
@@ -31,6 +21,7 @@ namespace FFBeast.ViewModels {
         public ProfilesViewModel(IGameManager gameManager) {
             this.gameManager = gameManager;
             this.EffectsViewModel = new EffectsViewModel();
+            OverrideDefaultSettings = false;
         }
     }
 }
