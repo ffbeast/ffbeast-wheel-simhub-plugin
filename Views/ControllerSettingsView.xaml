@@ -9,48 +9,20 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <styles:SHListBox>
-        <ListBoxItem>
+    <StackPanel>
             <styles:SHToggleCheckbox>Enable force (Require reboot)</styles:SHToggleCheckbox>
-        </ListBoxItem>
-        <ListBoxItem>
             <styles:SHToggleCheckbox>Invert joystick output</styles:SHToggleCheckbox>
-        </ListBoxItem>
-        <ListBoxItem>
             <styles:SHToggleCheckbox>Invert force</styles:SHToggleCheckbox>
-        </ListBoxItem>
-        <ListBoxItem>
             <styles:SHToggleCheckbox>Debug forces</styles:SHToggleCheckbox>
-        </ListBoxItem>
-        <ListBoxItem>
             <ui:TitledSlider Title="Encoder CPR" Maximum="65535" Minimum="0" Value="20480"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem>
             <ui:TitledSlider Title="Pole pairs" Maximum="100" Minimum="1" Value="15"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem>
             <ui:TitledSlider Title="Power limit (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem>
             <ui:TitledSlider Title="Calibration magnitude (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem IsEnabled="False">
-            <ui:TitledSlider Title="Calibration speed (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem>
+            <ui:TitledSlider Title="Calibration speed (%)" Maximum="100" Minimum="0" Value="50" IsEnabled="False"></ui:TitledSlider>
             <ui:TitledSlider Title="Braking resistor limit (%)" Maximum="100" Minimum="0" Value="50"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem IsEnabled="False">
-            <ui:TitledSlider Title="Speed sample buffer size" Maximum="32" Minimum="2" Value="2"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem IsEnabled="False">
-            <ui:TitledSlider Title="Position smoothing (%)" Maximum="100" Minimum="0" Value="0"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem>
+            <ui:TitledSlider Title="Speed sample buffer size" Maximum="32" Minimum="2" Value="2" IsEnabled="False"></ui:TitledSlider>
+            <ui:TitledSlider Title="Position smoothing (%)" Maximum="100" Minimum="0" Value="0" IsEnabled="False"></ui:TitledSlider>
             <ui:TitledSlider Title="P gain" Maximum="100" Minimum="0" Value="10"></ui:TitledSlider>
-        </ListBoxItem>
-        <ListBoxItem>
             <ui:TitledSlider Title="I gain" Maximum="1000" Minimum="0" Value="100"></ui:TitledSlider>
-        </ListBoxItem>
-    </styles:SHListBox>
+    </StackPanel>
 </UserControl>

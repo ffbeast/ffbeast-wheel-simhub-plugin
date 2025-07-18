@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="ViewModels\EffectsViewModel.cs" />
     <Compile Include="ViewModels\MainPluginViewModel.cs" />
+    <Compile Include="ViewModels\ProfilesViewModel.cs" />
     <Compile Include="ViewModels\VieModelBase.cs" />
     <Compile Include="Views\DeviceSettingsView.xaml.cs">
       <DependentUpon>DeviceSettingsView.xaml</DependentUpon>
@@ -117,6 +118,9 @@
     </Compile>
     <Compile Include="Views\ControllerSettingsView.xaml.cs">
       <DependentUpon>ControllerSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfilesView.xaml.cs">
+      <DependentUpon>ProfilesView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ControllerSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfilesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

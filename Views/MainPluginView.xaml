@@ -14,11 +14,26 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <styles:SHTabControl Grid.Row="0">
-            <styles:SHTabItem Header="Effects">
-                <local:EffectsView DataContext="{Binding EffectsViewModel}" />
+            <styles:SHTabItem Header="Profiles">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <local:ProfilesView DataContext="{Binding ProfilesViewModel}" />
+                </ScrollViewer>
             </styles:SHTabItem>
-            <styles:SHTabItem Header="Device">
-                <local:DeviceSettingsView />
+            <styles:SHTabItem Header="Effects">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <local:EffectsView DataContext="{Binding EffectsViewModel}" />
+                </ScrollViewer>
+            </styles:SHTabItem>
+            <styles:SHTabItem Header="Controller">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <local:ControllerSettingsView />
+                </ScrollViewer>
+            </styles:SHTabItem>
+            <styles:SHTabItem Header="Periphery">
+                <local:PeripherySettingsView />
+            </styles:SHTabItem>
+            <styles:SHTabItem Header="License">
+                <local:LicenseSettingsView />
             </styles:SHTabItem>
         </styles:SHTabControl>
         <Button Grid.Row="1" Content="Save and reboot" Margin="10"></Button>
