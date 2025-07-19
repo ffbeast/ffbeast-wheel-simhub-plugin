@@ -6,8 +6,6 @@ namespace FFBeast.ViewModels {
 
         private bool overrideDefaultSettings { get; set; }
 
-        public string SectionTitle => "Profile for " + gameManager.GameDisplayName;
-
         public bool OverrideDefaultSettings {
             get => overrideDefaultSettings;
             set {

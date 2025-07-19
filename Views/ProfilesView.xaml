@@ -10,12 +10,10 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </UserControl.Resources>
-    <styles:SHSection Title="{Binding SectionTitle}">
         <StackPanel>
             <styles:SHToggleCheckbox Content="Override default effect settings" IsChecked="{Binding OverrideDefaultSettings}" />
             <StackPanel Visibility="{Binding OverrideDefaultSettings, Converter={StaticResource BoolToVis}}">
                 <local:EffectsView DataContext="{Binding EffectsViewModel}" />
             </StackPanel>
         </StackPanel>
-    </styles:SHSection>
 </UserControl>

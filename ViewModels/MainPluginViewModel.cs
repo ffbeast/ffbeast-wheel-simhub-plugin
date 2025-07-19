@@ -2,9 +2,12 @@
 
 namespace FFBeast.ViewModels {
     public class MainPluginViewModel : ViewModelBase {
+        private IGameManager gameManager;
+        
         public EffectsViewModel EffectsViewModel { get; }
         public ProfilesViewModel ProfilesViewModel { get; }
 
+        public string SectionTitle => "Profile for " + gameManager.GameDisplayName;
         private string connectedDeviceName { get; set; }
         
         public bool DeviceConnected => connectedDeviceName != null;
@@ -22,6 +25,7 @@ namespace FFBeast.ViewModels {
         }
         
         public MainPluginViewModel(IGameManager gameManager) {
+            this.gameManager = gameManager;
             EffectsViewModel = new EffectsViewModel();
             ProfilesViewModel = new ProfilesViewModel(gameManager);
             ConnectedDeviceName= "FFBeast Wheel [RC.24.1.3]";
